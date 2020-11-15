@@ -1,0 +1,99 @@
+# Copyright (C) 2020 Peter Cauty
+# This file is distributed under the same license as the JustAuthMe plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: JustAuthMe 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/justauthme\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-11-15T12:45:52+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: justauthme\n"
+
+#. Plugin Name of the plugin
+msgid "JustAuthMe"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://developers.justauth.me/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Wordpress plugin for JustAuthMe"
+msgstr "Module JustAuthMe pour Wordpress"
+
+#. Author of the plugin
+msgid "Peter Cauty"
+msgstr ""
+
+#: html/admin.php:5
+msgid "Automated configuration"
+msgstr "Configuration automatique"
+
+#: html/admin.php:7
+msgid "Automated configuration is not available: the plugin is already set up."
+msgstr "La configuration automatique n'est pas disponible : le module est déjà configuré."
+
+#: html/admin.php:8
+msgid "Are you sure you want to erase this plugin configuration?"
+msgstr "Êtes-vous sur de vouloir effacer la configuration de ce module ?"
+
+#: html/admin.php:9
+msgid "Reset plugin"
+msgstr "Remettre à zéro"
+
+#: html/admin.php:13
+msgid "Plugin configuration successfully reset!"
+msgstr "Configuration du module remise à zéro avec succès !"
+
+#: html/admin.php:15
+msgid "All set up! Your users can now use JustAuthMe to log themselves into your website!"
+msgstr "Tout est bon ! Vos utilisateurs peuvent maintenant se connecter à votre site en utilisant JustAuthMe !"
+
+#: html/admin.php:17
+msgid "Error occured during automated configuration. If this error persists, please contact support."
+msgstr "Une erreur s'est produite pendant la configuration automatique. Si cette erreur persiste, contactez le support."
+
+#: html/admin.php:21
+msgid "Launch automated configuration"
+msgstr "Lancer la configuration automatique"
+
+#: html/admin.php:29
+msgid "Manual configuration"
+msgstr "Configuration manuelle"
+
+#: html/admin.php:31
+msgid "Configuration saved successfully!"
+msgstr "Configuration sauvegardée avec succès !"
+
+#: html/admin.php:33
+msgid "Error occurred during configuration change."
+msgstr "Une erreur s'est produite pendant l'enregistrement de la configuration."
+
+#: html/admin.php:36
+msgid "App ID:"
+msgstr "ID d'app :"
+
+#: html/admin.php:39
+msgid "Secret:"
+msgstr "Secret :"
+
+#: html/admin.php:44
+msgid "Access to your JustAuthMe developer account"
+msgstr "Accédez à votre compte développeur JustAuthMe"
+
+#: html/admin.php:57
+msgid "Show"
+msgstr "Montrer"
+
+#: html/admin.php:54
+msgid "Hide"
+msgstr "Cache"
+
+#: html/button.php:7
+msgid "Login with"
+msgstr "Connexion avec"

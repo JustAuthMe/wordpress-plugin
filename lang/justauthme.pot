@@ -1,0 +1,100 @@
+# Copyright (C) 2020 Peter Cauty
+# This file is distributed under the same license as the JustAuthMe plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: JustAuthMe 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/justauthme\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2020-11-15T15:00:08+01:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.4.0\n"
+"X-Domain: justauthme\n"
+
+#. Plugin Name of the plugin
+msgid "JustAuthMe"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://developers.justauth.me/"
+msgstr ""
+
+#. Description of the plugin
+msgid "Wordpress plugin for JustAuthMe"
+msgstr ""
+
+#. Author of the plugin
+msgid "Peter Cauty"
+msgstr ""
+
+#: html/admin.php:5
+msgid "Plugin configuration successfully reset!"
+msgstr ""
+
+#: html/admin.php:12
+msgid "All set up! Your users can now use JustAuthMe to log themselves into your website!"
+msgstr ""
+
+#: html/admin.php:19
+msgid "Error occured during automated configuration. If this error persists, please contact support."
+msgstr ""
+
+#: html/admin.php:26
+msgid "Configuration saved successfully!"
+msgstr ""
+
+#: html/admin.php:33
+msgid "Error occurred during configuration change."
+msgstr ""
+
+#: html/admin.php:41
+msgid "Automated configuration"
+msgstr ""
+
+#: html/admin.php:43
+msgid "Automated configuration is not available: the plugin is already set up."
+msgstr ""
+
+#: html/admin.php:44
+msgid "Access to your JustAuthMe developer account"
+msgstr ""
+
+#: html/admin.php:46
+msgid "Are you sure you want to erase this plugin configuration?"
+msgstr ""
+
+#: html/admin.php:47
+msgid "Reset plugin"
+msgstr ""
+
+#: html/admin.php:52
+msgid "Launch automated configuration"
+msgstr ""
+
+#: html/admin.php:60
+msgid "Manual configuration"
+msgstr ""
+
+#: html/admin.php:63
+msgid "App ID:"
+msgstr ""
+
+#: html/admin.php:66
+msgid "Secret:"
+msgstr ""
+
+#: html/admin.php:68
+#: html/admin.php:84
+msgid "Show"
+msgstr ""
+
+#: html/admin.php:81
+msgid "Hide"
+msgstr ""
+
+#: html/button.php:7
+msgid "Login with"
+msgstr ""
