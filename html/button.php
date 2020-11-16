@@ -1,3 +1,4 @@
+<?php defined('ABSPATH') || exit; ?>
 <a href="https://core.justauth.me/auth?app_id=<?php echo $settings['app_id'] ?>&redirect_url=<?php echo JAM_WEBROOT ?>callback.php" class="jam-button" style="margin-bottom:1rem">
     <div class="jam-btn-content">
         <div class="jam-btn-logo">

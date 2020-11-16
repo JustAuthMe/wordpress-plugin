@@ -1,4 +1,5 @@
-<?php if (isset($notice_type)): ?>
+<?php defined('ABSPATH') || exit;
+if (isset($notice_type)): ?>
 <div id="jam-notice" class="jam-notice jam-notice-<?php echo $notice_type ?>">
     <?php echo $notice_message ?>
     <div class="jam-notice-dismiss" onclick="closeJamNotice()" title="<?php _e('Close') ?>">&cross;</div>

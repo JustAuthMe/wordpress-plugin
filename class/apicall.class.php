@@ -1,5 +1,7 @@
 <?php
 
+defined('ABSPATH') || exit;
+
 class ApiCall {
     private $method = 'GET';
     private $url = null;

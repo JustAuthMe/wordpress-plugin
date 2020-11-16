@@ -1,5 +1,6 @@
 <?php
 
+defined('ABSPATH') || exit;
 
 class JustAuthMe {
     const USER_TABLE_NAME = 'justauthme_user';

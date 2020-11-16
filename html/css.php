@@ -1,3 +1,4 @@
+<?php defined('ABSPATH') || exit; ?>
 <link rel="stylesheet" href="https://static.justauth.me/medias/jam-button.css" />
 <style type="text/css">
     .jam-notice {
