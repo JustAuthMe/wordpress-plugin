@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2020-11-15T15:00:08+01:00\n"
+"POT-Creation-Date: 2020-11-16T14:59:15+01:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.4.0\n"
 "X-Domain: justauthme\n"
@@ -30,6 +30,22 @@ msgstr ""
 msgid "Peter Cauty"
 msgstr ""
 
+#: class/justauthme.class.php:187
+msgid "Error: no token was received. If this problem persists, please contact JustAuthMe support."
+msgstr ""
+
+#: class/justauthme.class.php:190
+msgid "Error: no personal info was received. Please remove this website from your JustAuthMe app and try again."
+msgstr ""
+
+#: class/justauthme.class.php:193
+msgid "Error: users are not allowed to register on this website."
+msgstr ""
+
+#: class/justauthme.class.php:196
+msgid "Logged in successfully! Welcome back!"
+msgstr ""
+
 #: html/admin.php:5
 msgid "Plugin configuration successfully reset!"
 msgstr ""
@@ -43,55 +59,56 @@ msgid "Error occured during automated configuration. If this error persists, ple
 msgstr ""
 
 #: html/admin.php:26
-msgid "Configuration saved successfully!"
-msgstr ""
-
-#: html/admin.php:33
-msgid "Error occurred during configuration change."
-msgstr ""
-
-#: html/admin.php:41
-msgid "Automated configuration"
-msgstr ""
-
-#: html/admin.php:43
+#: html/admin.php:53
 msgid "Automated configuration is not available: the plugin is already set up."
 msgstr ""
 
-#: html/admin.php:44
+#: html/admin.php:33
+msgid "Configuration saved successfully!"
+msgstr ""
+
+#: html/admin.php:40
+msgid "Error occurred during configuration change."
+msgstr ""
+
+#: html/admin.php:49
+msgid "Automated configuration"
+msgstr ""
+
+#: html/admin.php:55
 msgid "Access to your JustAuthMe developer account"
 msgstr ""
 
-#: html/admin.php:46
+#: html/admin.php:57
 msgid "Are you sure you want to erase this plugin configuration?"
 msgstr ""
 
-#: html/admin.php:47
+#: html/admin.php:58
 msgid "Reset plugin"
 msgstr ""
 
-#: html/admin.php:52
+#: html/admin.php:63
 msgid "Launch automated configuration"
 msgstr ""
 
-#: html/admin.php:60
+#: html/admin.php:73
 msgid "Manual configuration"
 msgstr ""
 
-#: html/admin.php:63
+#: html/admin.php:77
 msgid "App ID:"
 msgstr ""
 
-#: html/admin.php:66
+#: html/admin.php:80
 msgid "Secret:"
 msgstr ""
 
-#: html/admin.php:68
-#: html/admin.php:84
+#: html/admin.php:82
+#: html/admin.php:102
 msgid "Show"
 msgstr ""
 
-#: html/admin.php:81
+#: html/admin.php:99
 msgid "Hide"
 msgstr ""
 

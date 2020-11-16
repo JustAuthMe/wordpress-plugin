@@ -30,6 +30,22 @@ msgstr "Module JustAuthMe pour Wordpress"
 msgid "Peter Cauty"
 msgstr ""
 
+#: class/justauthme.class.php:187
+msgid "Error: no token was received. If this problem persists, please contact JustAuthMe support."
+msgstr "Erreur : aucun jeton n'a été reçu. Si le problème persiste, merci de contacter le support de JustAuthMe."
+
+#: class/justauthme.class.php:190
+msgid "Error: no personal info was received. Please remove this website from your JustAuthMe app and try again."
+msgstr "Erreur : aucune info personnelle n'a été reçue. Merci de supprimer ce site de votre app JustAuthMe et de recommencer."
+
+#: class/justauthme.class.php:193
+msgid "Error: users are not allowed to register on this website."
+msgstr "Erreur : les utilisateurs de ce site n'ont pas la permission de s'enregistrer."
+
+#: class/justauthme.class.php:196
+msgid "Logged in successfully! Welcome back!"
+msgstr "Connexion réussie ! Bienvenue !"
+
 #: html/admin.php:5
 msgid "Automated configuration"
 msgstr "Configuration automatique"
@@ -92,7 +108,7 @@ msgstr "Montrer"
 
 #: html/admin.php:54
 msgid "Hide"
-msgstr "Cache"
+msgstr "Cacher"
 
 #: html/button.php:7
 msgid "Login with"

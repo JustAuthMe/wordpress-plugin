@@ -3,7 +3,7 @@
 require_once '../../../wp-load.php';
 
 if (!isset($_GET['access_token'])) {
-    wp_safe_redirect(home_url());
+    wp_safe_redirect(home_url('?jam_no_token'));
     die;
 }
 
@@ -35,7 +35,7 @@ if ($cnt > 0) {
             dbDelta($sql);
 
             JustAuthMe::get()->login($user->ID);
-        } else {
+        } elseif (get_option('users_can_register')) {
             $email_local = explode('@', $obj->email)[0];
             $i = '';
             do {
@@ -64,9 +64,12 @@ if ($cnt > 0) {
             dbDelta($sql);
 
             JustAuthMe::get()->login($uid);
+        } else {
+            wp_safe_redirect(home_url('jam_cant_register'));
+            die;
         }
     } else {
-        wp_safe_redirect(home_url());
+        wp_safe_redirect(home_url('jam_no_email'));
         die;
     }
 }

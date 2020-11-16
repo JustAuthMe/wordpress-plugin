@@ -43,9 +43,9 @@ class JustAuthMe {
     }
 
     private function setActions() {
-        add_action('plugins_loaded', [$this, 'loadTranslations']);
+        add_action('wp_body_open', [$this, 'handleNotice']);
 
-        add_action('wp_head', [$this, 'customizeError']);
+        add_action('plugins_loaded', [$this, 'loadTranslations']);
 
         add_action('admin_menu', [$this, 'setupAdminMenu']);
 
@@ -64,6 +64,7 @@ class JustAuthMe {
 
         add_action('bp_before_account_details_fields', [$this, 'displayButton']);
         add_action('bp_before_sidebar_login_form', [$this, 'displayButton']);
+
     }
 
     private function setFilters() {
@@ -123,7 +124,7 @@ class JustAuthMe {
     }
 
     public function includeCSS() {
-        echo '<link rel="stylesheet" href="https://static.justauth.me/medias/jam-button.css" />';
+        require_once JAM_PLUGIN_DIR . 'html/css.php';
     }
 
     public function displayButton() {
@@ -154,14 +155,6 @@ class JustAuthMe {
         return $links;
     }
 
-    public function customizeError() {
-        global $error;
-
-        if (isset($_GET['jam_error'])) {
-            $error = '<b>' . __('Error') . ' :</b> An error occured during JustAuthMe login.';
-        }
-    }
-
     public function fetchSettings() {
         global $wpdb;
         $data = $wpdb->get_results("SELECT * FROM " . $this->setting_table_name);
@@ -179,12 +172,30 @@ class JustAuthMe {
         wp_set_current_user($user_id);
         wp_set_auth_cookie($user_id, true);
 
-        $redirect_to = $redirect_to === '' ? home_url() : $redirect_to;
+        $redirect_to = $redirect_to === '' ? home_url('?jam_success') : $redirect_to;
         wp_safe_redirect($redirect_to);
         die;
     }
 
     public function loadTranslations() {
         load_plugin_textdomain('justauthme', FALSE, basename(dirname(JAM_PLUGIN_FILE)) . '/lang/');
+    }
+
+    public function handleNotice() {
+        if (isset($_GET['jam_no_token'])) {
+            $notice_type = 'error';
+            $notice_message = __('Error: no token was received. If this problem persists, please contact JustAuthMe support.', 'justauthme');
+        } elseif (isset($_GET['jam_no_email'])) {
+            $notice_type = 'error';
+            $notice_message = __('Error: no personal info was received. Please remove this website from your JustAuthMe app and try again.', 'justauthme');
+        } elseif (isset($_GET['jam_cant_register'])) {
+            $notice_type = 'error';
+            $notice_message = __('Error: users are not allowed to register on this website.', 'justauthme');
+        } elseif (isset($_GET['jam_success'])) {
+            $notice_type = 'success';
+            $notice_message = __('Logged in successfully! Welcome back!', 'justauthme');
+        }
+
+        require_once JAM_PLUGIN_DIR . 'html/notice.php';
     }
 }
