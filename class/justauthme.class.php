@@ -199,4 +199,8 @@ class JustAuthMe {
 
         require_once JAM_PLUGIN_DIR . 'html/notice.php';
     }
+
+    public function getPluginVersion() {
+        return get_file_data(JAM_PLUGIN_FILE, ['Version'], 'plugin')[0];
+    }
 }

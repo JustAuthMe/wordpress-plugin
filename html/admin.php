@@ -88,7 +88,7 @@
         </div>
     </div>
     <span style="color:grey">
-        <?php echo esc_html(get_admin_page_title()) . ' v' . trim(file_get_contents(JAM_PLUGIN_DIR . 'version.txt')) ?>
+        <?php echo esc_html(get_admin_page_title()) . ' v' . JustAuthMe::get()->getPluginVersion() ?>
     </span>
 </div>
 <script type="text/javascript">
