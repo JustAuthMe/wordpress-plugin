@@ -40,7 +40,6 @@ class JustAuthMe {
     private function registerHooks() {
         register_activation_hook(JAM_PLUGIN_FILE, [$this, 'activateHook']);
         register_deactivation_hook(JAM_PLUGIN_FILE, [$this, 'deactivateHook']);
-        register_uninstall_hook(JAM_PLUGIN_FILE, [$this, 'uninstallHook']);
     }
 
     private function setActions() {
@@ -113,16 +112,6 @@ class JustAuthMe {
     }
 
     public function deactivateHook() {}
-
-    public function uninstallHook() {
-        global $wpdb;
-        require_once ABSPATH . 'wp-admin/includes/upgrade.php';
-
-        $sql = "DROP TABLE IF EXISTS `" . $this->user_table_name . "`;";
-        $sql2 = "DROP TABLE IF EXISTS `" . $this->setting_table_name . "`;";
-        dbDelta($sql);
-        dbDelta($sql2);
-    }
 
     public function includeCSS() {
         require_once JAM_PLUGIN_DIR . 'html/css.php';
