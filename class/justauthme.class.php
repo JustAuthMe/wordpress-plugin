@@ -53,18 +53,18 @@ class JustAuthMe {
         add_action('wp_head', [$this, 'includeCSS']);
         add_action('login_head', [$this, 'includeCSS']);
 
-        add_action('bp_before_account_details_fields', [$this, 'displayButton']);
-        add_action('bp_before_sidebar_login_form', [$this, 'displayButton']);
+        add_action('bp_before_account_details_fields', [$this, 'displayButtonOnlyIfEveryoneCanRegister']);
+        add_action('bp_before_sidebar_login_form', [$this, 'displayButtonOnlyIfEveryoneCanRegister']);
 
-        add_action('comment_form_top', [$this, 'displayButton']);
-        add_action('comment_form_must_log_in_after', [$this, 'displayButton']);
+        add_action('comment_form_top', [$this, 'displayButtonOnlyIfEveryoneCanRegister']);
+        add_action('comment_form_must_log_in_after', [$this, 'displayButtonOnlyIfEveryoneCanRegister']);
 
-        add_action('login_form', [$this, 'displayButton']);
-        add_action('register_form', [$this, 'displayButton']);
-        add_action('after_signup_form', [$this, 'displayButton']);
+        add_action('login_form', [$this, 'displayButtonAnyway']);
+        add_action('register_form', [$this, 'displayButtonOnlyIfEveryoneCanRegister']);
+        add_action('after_signup_form', [$this, 'displayButtonOnlyIfEveryoneCanRegister']);
 
-        add_action('bp_before_account_details_fields', [$this, 'displayButton']);
-        add_action('bp_before_sidebar_login_form', [$this, 'displayButton']);
+        add_action('bp_before_account_details_fields', [$this, 'displayButtonOnlyIfEveryoneCanRegister']);
+        add_action('bp_before_sidebar_login_form', [$this, 'displayButtonOnlyIfEveryoneCanRegister']);
 
     }
 
@@ -128,12 +128,24 @@ class JustAuthMe {
         require_once JAM_PLUGIN_DIR . 'html/css.php';
     }
 
-    public function displayButton() {
+    public function displayButton($checkRegistrationSetting = false) {
+        if ($checkRegistrationSetting && !get_option('users_can_register')) {
+            return;
+        }
+
         $user = wp_get_current_user();
         if ($user === null || $user->ID === 0) {
             $settings = $this->fetchSettings();
             require JAM_PLUGIN_DIR . 'html/button.php';
         }
+    }
+
+    public function displayButtonAnyway() {
+        $this->displayButton(false);
+    }
+
+    public function displayButtonOnlyIfEveryoneCanRegister() {
+        $this->displayButton(true);
     }
 
     public function displayAdminPage() {

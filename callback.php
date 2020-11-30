@@ -65,11 +65,11 @@ if ($cnt > 0) {
 
             JustAuthMe::get()->login($uid);
         } else {
-            wp_safe_redirect(home_url('jam_cant_register'));
+            wp_safe_redirect(home_url('?jam_cant_register'));
             die;
         }
     } else {
-        wp_safe_redirect(home_url('jam_no_email'));
+        wp_safe_redirect(home_url('?jam_no_email'));
         die;
     }
 }
