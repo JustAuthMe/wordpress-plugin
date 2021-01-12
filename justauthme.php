@@ -11,7 +11,7 @@
  * Plugin Name: JustAuthMe
  * Plugin URI: https://developers.justauth.me/
  * Description: Wordpress plugin for JustAuthMe
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: Peter Cauty
  * Text Domain: justauthme
  * Domain path: /lang
@@ -28,7 +28,7 @@ if (!defined('JAM_PLUGIN_DIR')) {
     define('JAM_PLUGIN_DIR', __DIR__ . '/');
 }
 
-if (!defined('WP_WEBROOT')) {
+if (!defined('JAM_WEBROOT')) {
     define('JAM_WEBROOT', home_url('wp-content/plugins/justauthme/'));
 }
 
