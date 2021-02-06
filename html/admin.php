@@ -59,7 +59,7 @@
                     <button class="button-secondary"><?php _e('Reset plugin', 'justauthme') ?></button>
                 </a>
                 <?php else: ?>
-                    <a href="https://developers.justauth.me/dash/integration?url=<?php echo urlencode(home_url()) ?>" style="color:white;text-decoration:none">
+                    <a href="https://developers.justauth.me/dash/integration?url=<?php echo urlencode(home_url()) ?>&platform=wordpress" style="color:white;text-decoration:none">
                         <button style="border-radius:3px;border:none;background:#3498db;color:white;padding:10px 20px;cursor:pointer;">
                             <?php _e('Launch automated configuration', 'justauthme') ?>
                         </button>

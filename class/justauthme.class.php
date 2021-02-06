@@ -66,6 +66,8 @@ class JustAuthMe {
         add_action('bp_before_account_details_fields', [$this, 'displayButtonOnlyIfEveryoneCanRegister']);
         add_action('bp_before_sidebar_login_form', [$this, 'displayButtonOnlyIfEveryoneCanRegister']);
 
+        add_action('woocommerce_before_customer_login_form', [$this, 'displayButtonOnlyIfEveryoneCanRegister']);
+
     }
 
     private function setFilters() {

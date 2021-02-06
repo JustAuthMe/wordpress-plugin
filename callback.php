@@ -42,12 +42,9 @@ if ($cnt > 0) {
                 $username = $email_local . $i;
                 $i++;
             } while (get_user_by('slug', $username) !== false);
+            $passwd = wp_generate_password(32, true, true);
 
-            $userdata = [
-                'user_login' => $username,
-                'user_email' => $obj->email,
-                'user_pass' => wp_generate_password(32, true, true),
-            ];
+            $userdata = [];
 
             if (isset($obj->firstname)) {
                 $userdata['first_name'] = $obj->firstname;
@@ -57,7 +54,36 @@ if ($cnt > 0) {
                 $userdata['last_name'] = $obj->lastname;
             }
 
-            $uid = wp_insert_user($userdata);
+            if (defined('WC_VERSION')) {
+                $uid = wc_create_new_customer($obj->email, $username, $passwd, $userdata);
+                WC()->customer = new WC_Customer($uid);
+                WC()->customer->set_props([
+                    'billing_first_name' => $obj->firstname ? $obj->firstname : '',
+                    'billing_last_name'  => $obj->lastname ? $obj->lastname : '',
+                    'billing_address_1'  => $obj->address_1 ? $obj->address_1 : '',
+                    'billing_address_2'  => $obj->address_2 ? $obj->address_2 : '',
+                    'billing_city'       => $obj->city ? $obj->city : '',
+                    'billing_postcode'   => $obj->postal_code ? $obj->postal_code : '',
+                    'billing_country'    => $obj->country ? $obj->country : '',
+                    'billing_state'      => $obj->state ? $obj->state : '',
+                    'billing_email'      => $obj->email,
+                    'shipping_first_name' => $obj->firstname ? $obj->firstname : '',
+                    'shipping_last_name'  => $obj->lastname ? $obj->lastname : '',
+                    'shipping_address_1'  => $obj->address_1 ? $obj->address_1 : '',
+                    'shipping_address_2'  => $obj->address_2 ? $obj->address_2 : '',
+                    'shipping_city'       => $obj->city ? $obj->city : '',
+                    'shipping_postcode'   => $obj->postal_code ? $obj->postal_code : '',
+                    'shipping_country'    => $obj->country ? $obj->country : '',
+                    'shipping_state'      => $obj->state ? $obj->state : ''
+                ]);
+                WC()->customer->save();
+            } else {
+                $userdata['user_login'] = $username;
+                $userdata['user_email'] = $obj->email;
+                $userdata['user_pass'] = $passwd;
+
+                $uid = wp_insert_user($userdata);
+            }
 
             $sql = $wpdb->prepare("INSERT INTO " . JustAuthMe::get()->getUserTableName() . " (user_id, jam_id) VALUES(%d, %s)", [$uid, $obj->jam_id]);
             require_once ABSPATH . 'wp-admin/includes/upgrade.php';
